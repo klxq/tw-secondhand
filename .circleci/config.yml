@@ -76,6 +76,9 @@ jobs:
     working_directory: ~/repo
 
     steps:
+      - add-ssh-keys:
+          fingerprints:
+            - "82:d6:4a:cf:92:aa:9f:07:fa:b3:21:3e:03:75:0e:f6"
       - checkout
       - restore_cache:
           key: dependencies-{{ .Branch }}-{{ checksum "yarn.lock" }}
