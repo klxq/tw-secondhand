@@ -1,6 +1,7 @@
 {
   "name": "react-app-ts-jest-most",
   "version": "0.1.0",
+  "homepage": "http://trotyl.github.io/tw-secondhand",
   "private": true,
   "dependencies": {
     "@types/jest": "^20.0.1",
@@ -33,6 +34,7 @@
     "@types/isomorphic-fetch": "0.0.34",
     "enzyme": "^2.9.1",
     "fetch-mock": "^5.12.1",
+    "gh-pages": "^1.0.0",
     "husky": "^0.14.1",
     "react-addons-test-utils": "15.4.2",
     "react-scripts-ts-tw": "^1.0.7",
@@ -47,6 +49,8 @@
     "test": "react-scripts-ts-tw test --env=jsdom",
     "eject": "react-scripts-ts-tw eject",
     "cover": "react-scripts-ts-tw test --env=jsdom --coverage",
-    "lint": "tslint 'src/**/*.{ts,tsx}'"
+    "lint": "tslint 'src/**/*.{ts,tsx}'",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }
