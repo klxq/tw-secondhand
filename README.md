@@ -1,3 +1,5 @@
+[![CircleCI](https://img.shields.io/circleci/project/github/trotyl/tw-secondhand.svg)](https://circleci.com/gh/trotyl/tw-secondhand)
+
 react-scripts-ts
 ------------------------
 
