@@ -94,7 +94,7 @@ workflows:
       - build
       - test
       - deploy:
-          ilters:
+          filters:
             branches:
               only:
                 - master
