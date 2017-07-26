@@ -16,7 +16,8 @@ group_defaults:
   reset_on_push:
     enabled: true
   approve_by_comment:
-    enabled: false
+    enabled: true
+    approve_regex: '^LGTM'
 
 groups:
   build-and-ci:
