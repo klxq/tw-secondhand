@@ -1,4 +1,4 @@
-[![CircleCI](https://img.shields.io/circleci/project/github/trotyl/tw-secondhand.svg)](https://circleci.com/gh/trotyl/tw-secondhand)
+[![CircleCI branch](https://img.shields.io/circleci/project/github/trotyl/tw-secondhand/master.svg)](https://circleci.com/gh/trotyl/tw-secondhand)
 [![Codecov](https://img.shields.io/codecov/c/github/trotyl/tw-secondhand.svg)](https://codecov.io/gh/trotyl/tw-secondhand)
 
 react-scripts-ts
