@@ -84,6 +84,9 @@ jobs:
           paths:
             - node_modules
           key: dependencies-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      - run: |
+          git config --global user.email "trotyl.qq.com"
+          git config --global user.name "Trotyl Robot"
       - run: yarn run deploy
 
 workflows:
