@@ -1,0 +1,51 @@
+# === GitHub username to Full name map ===
+#
+# trotyl - Zejiang Yu
+
+
+version: 2
+
+requirements:
+  signed_off_by:
+    required: true
+
+always_pending:
+  title_regex: 'WIP'
+  explanation: 'Work in progress...'
+
+group_defaults:
+  required: 1
+  reset_on_reopened:
+    enabled: true
+  reset_on_push:
+    enabled: true
+  approve_by_comment:
+    enabled: false
+
+groups:
+  build-and-ci:
+    users:
+      - trotyl
+
+    conditions:
+      branches:
+        - master
+
+      files:
+        include:
+          - "*.yml"
+          - "*.json"
+          - "*.lock"
+          - "*.md"
+
+  main:
+    users:
+      - trotyl
+
+    conditions:
+      branches:
+        - master
+
+      files:
+        include:
+          - "src/*"
