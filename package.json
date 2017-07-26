@@ -36,6 +36,7 @@
     "husky": "^0.14.1",
     "react-addons-test-utils": "15.4.2",
     "react-scripts-ts-tw": "^1.0.7",
+    "tslint": "^5.5.0",
     "typescript": "2.3.4"
   },
   "scripts": {
@@ -45,6 +46,7 @@
     "c": "react-scripts-ts-tw init",
     "test": "react-scripts-ts-tw test --env=jsdom",
     "eject": "react-scripts-ts-tw eject",
-    "cover": "react-scripts-ts-tw test --env=jsdom --coverage"
+    "cover": "react-scripts-ts-tw test --env=jsdom --coverage",
+    "lint": "tslint 'src/**/*.{ts,tsx}'"
   }
 }
