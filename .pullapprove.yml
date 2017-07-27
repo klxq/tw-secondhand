@@ -39,12 +39,11 @@ groups:
 
   main:
     required: 2
-    
+
     users:
       - trotyl
       - futantan
       - klxq
-      - ndrlslz
 
     conditions:
       branches:
