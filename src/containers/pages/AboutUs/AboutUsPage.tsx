@@ -12,4 +12,8 @@ const AboutUsPage = (props: DispatchProp<object> & RouteComponentProps<object>) 
   </div>
 )
 
-export default connect()(AboutUsPage)
+const connnectedAboutUsPage = connect()(AboutUsPage)
+
+export {
+  connnectedAboutUsPage as AboutUsPage
+}

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
-import Logo from './Logo'
+import { Logo } from './Logo'
 
 it('Logo shallow renders with img', () => {
   const wrapper = shallow(<Logo/>)

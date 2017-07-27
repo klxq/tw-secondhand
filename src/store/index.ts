@@ -6,12 +6,12 @@ import * as storage from 'redux-storage'
 import createEngine from 'redux-storage-engine-localstorage'
 import filter from 'redux-storage-decorator-filter'
 
-import initialState from './initialState'
-import reducers from './reducers'
-import middlewares from './middlewares'
+import { initialState } from './initialState'
+import { reducers } from './reducers'
+import { middlewares } from './middlewares'
 import { USER_LOGIN_SUC } from '../modules/user/actions'
 
-const storeConfigure = (history: History) => {
+export const storeConfigure = (history: History) => {
     const reducer = storage.reducer(combineReducers(reducers))
     const router = routerMiddleware(history)
 
@@ -35,5 +35,3 @@ const storeConfigure = (history: History) => {
 
     return store
 }
-
-export default storeConfigure

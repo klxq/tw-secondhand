@@ -5,7 +5,7 @@ const initialState: D.UserState = {
     name: '',
 }
 
-const userReducer: Redux.Reducer<D.UserState> = (state: D.UserState, action: D.UserAction): D.UserState => {
+export const userReducer: Redux.Reducer<D.UserState> = (state: D.UserState, action: D.UserAction): D.UserState => {
     state = state || initialState
     switch (action.type) {
         case 'USER_LOGIN_SUC':
@@ -17,5 +17,3 @@ const userReducer: Redux.Reducer<D.UserState> = (state: D.UserState, action: D.U
     }
     return state
 }
-
-export default userReducer

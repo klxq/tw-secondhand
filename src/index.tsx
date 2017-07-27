@@ -6,8 +6,8 @@ if (process.env.NODE_ENV === 'development') {
   require('./apis/mocks')
 }
 
-import App from './App'
-import registerServiceWorker from './registerServiceWorker'
+import { App } from './App'
+import { register as registerServiceWorker } from './registerServiceWorker'
 import './index.css'
 
 ReactDOM.render(

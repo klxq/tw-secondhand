@@ -7,6 +7,6 @@ interface LogoProps {
    logo?: string
 }
 
-export default (props: LogoProps) => (
+export const Logo = (props: LogoProps) => (
     <img src={props.logo || logo} className="App-logo" alt="logo" />
 )

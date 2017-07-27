@@ -1,3 +1,3 @@
 import * as React from 'react'
 
-export default () => (<div>404 Not Found</div>)
+export const NotFound = () => (<div>404 Not Found</div>)

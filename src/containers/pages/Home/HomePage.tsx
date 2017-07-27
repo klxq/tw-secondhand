@@ -35,6 +35,10 @@ const HomePage = (props: HomePageProps<object>) => {
     )
 }
 
-export default connect(
+const connectedHomePage = connect(
     (state: D.RootState<object>) => ({user: state.user})
 )(HomePage)
+
+export {
+    connectedHomePage as HomePage
+}

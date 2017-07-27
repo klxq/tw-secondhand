@@ -1,9 +1,9 @@
 import { routerReducer as router } from 'react-router-redux'
 
-import app from '../modules/app/reducer'
-import user from '../modules/user/reducer'
+import { appReducer as app } from '../modules/app/reducer'
+import { userReducer as user } from '../modules/user/reducer'
 
-export default {
+export const reducers = {
     app,
     user,
     router,
