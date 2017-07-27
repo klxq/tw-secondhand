@@ -26,9 +26,9 @@ const storeConfigure = (history: History) => {
     ])
 
     const createStoreWithMiddleware = applyMiddleware(router, storeMiddleware, ...middlewares)(createStore)
-    
+
     const store = createStoreWithMiddleware(reducer, initialState)
-    
+
     const load = storage.createLoader(engine)
     // will trigger storage load action
     load(store)
