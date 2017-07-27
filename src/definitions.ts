@@ -31,7 +31,7 @@ export interface GeneralAction extends Redux.Action {
 }
 
 export interface UserAction extends GeneralAction {
-    payload?: UserForLogin
+    payload: UserForLogin
 }
 
 // STATES
