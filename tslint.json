@@ -9,6 +9,7 @@
             "statements"
         ],
         "ban": false,
+        "ban-types": [true, ["Object"], ["String"], ["Number"], ["Boolean"]],
         "class-name": true,
         "comment-format": [
             true,
