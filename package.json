@@ -49,7 +49,7 @@
     "test": "react-scripts-ts-tw test --env=jsdom",
     "eject": "react-scripts-ts-tw eject",
     "cover": "react-scripts-ts-tw test --env=jsdom --coverage",
-    "lint": "tslint 'src/**/*.{ts,tsx}'",
+    "lint": "tslint '{src,types}/**/*.{ts,tsx}'",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   }

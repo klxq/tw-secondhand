@@ -1,1 +1,1 @@
-declare var localStorage: Storage;
+declare var localStorage: Storage
