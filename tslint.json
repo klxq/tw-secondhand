@@ -72,6 +72,7 @@
             "check-open-brace",
             "check-whitespace"
         ],
+        "prefer-for-of": true,
         "quotemark": [true, "single", "jsx-double"],
         "radix": true,
         "semicolon": [true, "never"],
