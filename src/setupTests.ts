@@ -1,4 +1,4 @@
 global.localStorage = {
   getItem: () => '{}',
   setItem: () => '{}',
-};
+}

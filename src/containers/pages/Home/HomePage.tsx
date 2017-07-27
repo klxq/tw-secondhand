@@ -1,19 +1,19 @@
-import * as React from 'react';
-import { connect, DispatchProp } from 'react-redux';
-import { RouteComponentProps } from 'react-router';
-import { push } from 'react-router-redux';
+import * as React from 'react'
+import { connect, DispatchProp } from 'react-redux'
+import { RouteComponentProps } from 'react-router'
+import { push } from 'react-router-redux'
 
-import * as D from '../../../definitions';
-import * as Components from '../../../components';
-import { userLogin } from '../../../modules/user/actions';
+import * as D from '../../../definitions'
+import * as Components from '../../../components'
+import { userLogin } from '../../../modules/user/actions'
 
-import './HomePage.css';
+import './HomePage.css'
 type HomePageProps<S> = DispatchProp<S> & RouteComponentProps<S> & {
     user: D.UserState,
-};
+}
 
 const HomePage = (props: HomePageProps<object>) => {
-    const { dispatch, user } = props;
+    const { dispatch, user } = props
     return (
         <div className="App">
             <div className="App-header">
@@ -32,9 +32,9 @@ const HomePage = (props: HomePageProps<object>) => {
                 <button onClick={() => dispatch(push('about-us'))}>Go to About Us</button>
             </p>
         </div>
-    );
-};
+    )
+}
 
 export default connect(
     (state: D.RootState<object>) => ({user: state.user})
-)(HomePage);
+)(HomePage)
