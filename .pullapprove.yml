@@ -1,7 +1,9 @@
 # === GitHub username to Full name map ===
 #
-# trotyl - Zejiang Yu
-
+# trotyl   - Zejiang Yu
+# futantan - Tantan Fu
+# klxq     - Ling Wang
+# ndrlslz  - Xu Yao
 
 version: 2
 
@@ -36,8 +38,13 @@ groups:
           - "*.md"
 
   main:
+    required: 2
+    
     users:
       - trotyl
+      - futantan
+      - klxq
+      - ndrlslz
 
     conditions:
       branches:
