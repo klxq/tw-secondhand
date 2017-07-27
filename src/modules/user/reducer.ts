@@ -10,8 +10,7 @@ export const userReducer: Redux.Reducer<D.UserState> = (state: D.UserState, acti
     switch (action.type) {
         case 'USER_LOGIN_SUC':
             return {
-                ...state,
-                ...action.payload,
+                name: action.payload.username || state.name,
             }
         default:
     }
