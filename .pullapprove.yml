@@ -37,7 +37,7 @@ groups:
           - "*.lock"
           - "*.md"
 
-  main:
+  feature:
     required: 2
 
     users:
