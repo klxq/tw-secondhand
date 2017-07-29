@@ -1,7 +1,7 @@
 import * as React from 'react'
 import './Logo.css'
 
-const logo = require('./logo.svg')
+const logo = require('./logo.png')
 
 interface LogoProps {
    logo?: string
