@@ -1,4 +1,4 @@
-import * as D from '../definitions'
+import { UserForLogin, User } from '../definitions'
 import { fetchJson } from './utils'
 
-export const login = (user: D.UserForLogin): Promise<D.User> => fetchJson('/login', { body: JSON.stringify(user) })
+export const login = (user: UserForLogin): Promise<User> => fetchJson('/login', { body: JSON.stringify(user) })

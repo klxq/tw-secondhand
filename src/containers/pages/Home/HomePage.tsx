@@ -3,13 +3,13 @@ import { connect, DispatchProp } from 'react-redux'
 import { RouteComponentProps } from 'react-router'
 import { push } from 'react-router-redux'
 
-import * as D from '../../../definitions'
-import * as Components from '../../../components'
+import { RootState, UserState } from '../../../definitions'
+import { Logo } from '../../../components'
 import { userLogin } from '../../../modules/user/actions'
 
 import './HomePage.css'
 type HomePageProps<S> = DispatchProp<S> & RouteComponentProps<S> & {
-    user: D.UserState,
+    user: UserState,
 }
 
 const HomePage = (props: HomePageProps<object>) => {
@@ -17,7 +17,7 @@ const HomePage = (props: HomePageProps<object>) => {
     return (
         <div className="App">
             <div className="App-header">
-                <Components.Logo />
+                <Logo />
                 <h2>Welcome to React</h2>
             </div>
             <p className="App-intro">
@@ -36,7 +36,7 @@ const HomePage = (props: HomePageProps<object>) => {
 }
 
 const connectedHomePage = connect(
-    (state: D.RootState<object>) => ({user: state.user})
+    (state: RootState<object>) => ({user: state.user})
 )(HomePage)
 
 export {

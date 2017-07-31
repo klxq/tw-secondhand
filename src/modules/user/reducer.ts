@@ -1,11 +1,11 @@
-import * as D from '../../definitions'
+import { UserState, UserAction } from '../../definitions'
 import * as Redux from 'redux'
 
-const initialState: D.UserState = {
+const initialState: UserState = {
     name: '',
 }
 
-export const userReducer: Redux.Reducer<D.UserState> = (state: D.UserState, action: D.UserAction): D.UserState => {
+export const userReducer: Redux.Reducer<UserState> = (state: UserState, action: UserAction): UserState => {
     state = state || initialState
     switch (action.type) {
         case 'USER_LOGIN_SUC':
