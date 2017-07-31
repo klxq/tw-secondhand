@@ -38,7 +38,7 @@ groups:
           - "*.md"
 
   feature:
-    required: 2
+    required: 1
 
     users:
       - trotyl
