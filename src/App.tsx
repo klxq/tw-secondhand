@@ -3,11 +3,12 @@ import { Provider } from 'react-redux'
 import createHistory from 'history/createBrowserHistory'
 import { ConnectedRouter } from 'react-router-redux'
 
+import { basename } from './routing'
 import { storeConfigure } from './store'
 import { routers } from './store/routers'
 
 const history = createHistory({
-  basename: '/tw-secondhand/',
+  basename,
 })
 const store = storeConfigure(history)
 
