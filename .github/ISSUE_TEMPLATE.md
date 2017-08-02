@@ -1,10 +1,8 @@
 ## This is a...
 <!-- Check one of the following options with "x" -->
-<pre><code>
 [ ] Bug/Defect
 [ ] Feature/Story
 [ ] Enhancement
-</code></pre>
 
 ## Current behavior
 <!-- Describe how the issue manifests. -->
