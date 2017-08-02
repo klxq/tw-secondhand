@@ -10,22 +10,11 @@
 <!-- Describe how the issue manifests. -->
 
 
-## Expected behavior
+## Expected behavior / Acceptance criteria
 <!-- Describe what the desired behavior would be. -->
 
 
-## What is the motivation / use case for changing the behavior?
-<!-- Describe the motivation or the concrete use case. -->
+## Out of scope
+<!-- Describe what will not be covered by this issue. -->
 
-
-## Acceptance Criteria
-
-<pre><code>
-Checklist:
-- [ ] item 1
-- [ ] item 2
-</code></pre>
-
-
-Others:
 
