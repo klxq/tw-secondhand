@@ -1,8 +1,38 @@
 [![CircleCI branch](https://img.shields.io/circleci/project/github/trotyl/tw-secondhand/master.svg)](https://circleci.com/gh/trotyl/tw-secondhand)
 [![Codecov branch](https://img.shields.io/codecov/c/github/trotyl/tw-secondhand/master.svg)](https://codecov.io/gh/trotyl/tw-secondhand)
 
-react-scripts-ts
+Second-Hand Market
 ------------------------
+
+This project is used for an internal workshop at ThoughtWorks Chengdu.
+
+Online demo: https://trotyl.github.io/tw-secondhand/
+*(Automatcally built from Circle-CI for master branch)*
+
+## Tech Stack
+
+- React
+- React Router
+- Redux
+- Redux Observable
+- TypeScript
+
+
+## Workshop Information
+
+- [Mockup](https://sketch.cloud/s/8yxD3)
+- [API](https://secondhand.leanapp.cn/)
+
+
+## Integrated Platforms
+
+- [Github Project](https://github.com/trotyl/tw-secondhand/projects/1): Story board
+- [Circle CI](https://circleci.com/gh/trotyl/tw-secondhand): CI for test, build & deploy
+- [CodeCov](https://codecov.io/gh/trotyl/tw-secondhand): Code coverage reports
+- [PullApprove](https://pullapprove.com/trotyl/tw-secondhand/): Code review tool
+
+
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
