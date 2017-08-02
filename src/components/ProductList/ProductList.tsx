@@ -10,14 +10,6 @@ export interface ProductListProps {
 }
 
 export class ProductList extends Component<ProductListProps> {
-    props: ProductListProps
-
-    constructor(props: ProductListProps) {
-        super()
-
-        this.props = props
-    }
-
     render() {
         return (
         <div className="App-product-list">

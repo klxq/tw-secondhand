@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Provider } from 'react-redux'
 import createHistory from 'history/createBrowserHistory'
+import { Component } from 'react'
 import { ConnectedRouter } from 'react-router-redux'
 
 import { basename } from './routing'
@@ -12,8 +13,12 @@ const history = createHistory({
 })
 const store = storeConfigure(history)
 
-export const App = () => (
-    <Provider store={store}>
-        <ConnectedRouter history={history}>{routers}</ConnectedRouter>
-    </Provider>
-)
+export class App extends Component {
+    render() {
+        return (
+            <Provider store={store}>
+                <ConnectedRouter history={history}>{routers}</ConnectedRouter>
+            </Provider>
+        )
+    }
+}

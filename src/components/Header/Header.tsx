@@ -8,14 +8,6 @@ export interface HeaderProps {
 }
 
 export class Header extends Component<HeaderProps> {
-    props: HeaderProps
-
-    constructor(props: HeaderProps) {
-        super()
-
-        this.props = props
-    }
-
     render() {
         return (
         <div className="App-header">

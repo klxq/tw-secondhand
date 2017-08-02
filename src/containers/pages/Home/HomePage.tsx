@@ -19,9 +19,8 @@ interface HomePageState {
 
 class HomePage extends Component<HomePageProps, HomePageState> {
     constructor(props: HomePageProps) {
-        super()
+        super(props)
 
-        this.props = props
         this.state = {
             products: []
         }
