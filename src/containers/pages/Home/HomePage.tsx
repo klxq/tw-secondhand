@@ -5,10 +5,11 @@ import { RouteComponentProps } from 'react-router'
 
 import { RootState, UserState, Product } from '../../../definitions'
 import { Header, Footer, ProductList } from '../../../components'
+import { available } from '../../../apis/product'
 
 import './HomePage.css'
 
-interface HomePageProps<S> extends DispatchProp<S>, RouteComponentProps<S> {
+interface HomePageProps extends DispatchProp<void>, RouteComponentProps<void> {
     user: UserState
 }
 
@@ -16,8 +17,8 @@ interface HomePageState {
     products: Product[]
 }
 
-class HomePage extends Component<HomePageProps<{}>, HomePageState> {
-    constructor(props: HomePageProps<{}>) {
+class HomePage extends Component<HomePageProps, HomePageState> {
+    constructor(props: HomePageProps) {
         super()
 
         this.props = props
@@ -38,12 +39,10 @@ class HomePage extends Component<HomePageProps<{}>, HomePageState> {
         )
     }
 
-    fetchAllProducts(): void {
-        fetch('https://secondhand.leanapp.cn/products')
-            .then(res => res.json())
-            .then((products: Product[]) => {
-                this.setState({ products })
-            })
+    async fetchAllProducts(): Promise<void> {
+        this.setState({
+            products: await available()
+        })
     }
 }
 

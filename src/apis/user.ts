@@ -1,4 +1,4 @@
 import { UserForLogin, User } from '../definitions'
-import { fetchJson } from './utils'
+import { request } from './utils'
 
-export const login = (user: UserForLogin): Promise<User> => fetchJson('/login', { body: JSON.stringify(user) })
+export const login = (user: UserForLogin): Promise<User> => request('/login', { body: JSON.stringify(user) })

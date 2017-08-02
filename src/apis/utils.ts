@@ -1,9 +1,18 @@
 export const host = 'https://secondhand.leanapp.cn'
 
-export const fetchJson = (url: string, option?: RequestInit) => fetch(url, option)
-  .then(response => {
-    if (response.status < 400) {
-      return response.json()
-    }
-    throw response
-  })
+export function normalizeUrl(url: string): string {
+  if (url.startsWith('http') || url.startsWith('//')) {
+    return url
+  } else if (url.startsWith('/')) {
+    return `${host}${url}`
+  } else {
+    return `${host}/${url}`
+  }
+}
+
+export async function request<T>(url: string, option?: RequestInit): Promise<T> {
+  const normalizedUrl = normalizeUrl(url)
+  const response = await fetch(normalizedUrl, option)
+  const body = await response.json()
+  return body
+}

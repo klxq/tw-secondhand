@@ -95,4 +95,4 @@ const products: Product[] = [{
   }
 }]
 
-fetchMock.mock(`${host}/products`, new Response(JSON.stringify(products), { status: 200 }))
+fetchMock.mock(`${host}/products`, JSON.stringify(products))
