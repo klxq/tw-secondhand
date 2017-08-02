@@ -1,8 +1,12 @@
 ## This is a...
 <!-- Check one of the following options with "x" -->
+
+```
 [ ] Bug/Defect
 [ ] Feature/Story
 [ ] Enhancement
+```
+
 
 ## Current behavior
 <!-- Describe how the issue manifests. -->
