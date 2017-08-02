@@ -1,6 +1,6 @@
 import { Product } from '../definitions'
-import { request } from './utils'
+import { get } from './utils'
 
 export async function available(): Promise<Product[]> {
-  return request<Product[]>('/products')
+    return get<Product[]>('/products')
 }

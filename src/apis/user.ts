@@ -1,4 +1,6 @@
-import { UserForLogin, User } from '../definitions'
-import { request } from './utils'
+import { User, CreatedUser } from '../definitions'
+import { post } from './utils'
 
-export const login = (user: UserForLogin): Promise<User> => request('/login', { body: JSON.stringify(user) })
+export async function login(user: User): Promise<CreatedUser> {
+    return post<CreatedUser>('/login', user)
+}

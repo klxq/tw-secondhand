@@ -1,16 +1,17 @@
-import { UserState, UserAction } from '../../definitions'
-import * as Redux from 'redux'
+import { UserState, UserAuthenticatedAction } from '../../definitions'
 
 const initialState: UserState = {
-    name: '',
+    username: null,
+    sessionToken: null,
 }
 
-export const userReducer: Redux.Reducer<UserState> = (state: UserState, action: UserAction): UserState => {
+export function userReducer(state: UserState, action: UserAuthenticatedAction): UserState {
     state = state || initialState
     switch (action.type) {
         case 'USER_LOGIN_SUC':
             return {
-                name: action.payload.username || state.name,
+                ...state,
+                ...action.payload,
             }
         default:
     }

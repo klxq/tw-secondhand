@@ -2,6 +2,10 @@ import * as fetchMock from 'fetch-mock'
 import { host } from './utils'
 import { available } from './product'
 
+beforeEach(() => {
+    fetchMock.reset()
+})
+
 it('should be able to retrieve available products', async () => {
     const mockProducts = [{
       name: 'iPhone 7',

@@ -1,4 +1,4 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { createStore, combineReducers, applyMiddleware, Store } from 'redux'
 import { routerMiddleware } from 'react-router-redux'
 import { History } from 'history'
 
@@ -11,7 +11,7 @@ import { reducers } from './reducers'
 import { middlewares } from './middlewares'
 import { USER_LOGIN_SUC } from '../modules/user/actions'
 
-export const storeConfigure = (history: History) => {
+export function storeConfigure(history: History): Store<void> {
     const reducer = storage.reducer(combineReducers(reducers))
     const router = routerMiddleware(history)
 

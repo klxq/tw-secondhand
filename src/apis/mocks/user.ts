@@ -2,4 +2,7 @@ import * as fetchMock from 'fetch-mock'
 
 import { host } from '../utils'
 
-fetchMock.mock(`${host}/login`, 200, {name: 'Tom'})
+fetchMock.post(`${host}/login`, {
+    'sessionToken': 'bthj6jk5c97uevo0vox9qp4u9',
+    'username': 'testuser',
+})

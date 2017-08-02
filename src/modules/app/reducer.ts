@@ -6,7 +6,7 @@ const initialState: AppState  = {
     logined: false,
 }
 
-export const appReducer: Redux.Reducer<AppState> = (state: AppState, action: Redux.Action): AppState => {
+export function appReducer(state: AppState, action: Redux.Action): AppState {
     state = state || initialState
     return state
 }

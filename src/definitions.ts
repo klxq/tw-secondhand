@@ -10,17 +10,18 @@ export interface App {
 }
 
 export interface User {
-    name: string
-}
-
-export interface UserProfile {
-    username: string
-    objectId: string
-}
-
-export interface UserForLogin {
     username: string
     password: string
+}
+
+export interface UserWithToken {
+    sessionToken: string
+    username: string
+}
+
+export interface CreatedUser {
+    username: string
+    objectId: string
 }
 
 export interface Product {
@@ -28,7 +29,7 @@ export interface Product {
     price: string
     img: string
     description: string
-    owner: UserProfile
+    owner: CreatedUser
 }
 
 // ACTION CREATORS
@@ -38,13 +39,20 @@ export interface GeneralAction extends Redux.Action {
     payload?: object
 }
 
-export interface UserAction extends GeneralAction {
-    payload: UserForLogin
+export interface UserAuthenticatingAction extends GeneralAction {
+    payload: User
+}
+
+export interface UserAuthenticatedAction extends GeneralAction {
+    payload: UserWithToken
 }
 
 // STATES
 export type AppState = App
-export type UserState = User
+export interface UserState {
+    username: string | null
+    sessionToken: string | null
+}
 
 export interface RootState<S> {
     user: UserState | null

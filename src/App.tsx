@@ -8,7 +8,7 @@ import { storeConfigure } from './store'
 import { routers } from './store/routers'
 
 const history = createHistory({
-  basename,
+    basename,
 })
 const store = storeConfigure(history)
 
