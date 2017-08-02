@@ -14,13 +14,21 @@ export interface User {
 }
 
 export interface UserProfile {
-    id?: string
-    email: string
+    username: string
+    objectId: string
 }
 
 export interface UserForLogin {
     username: string
     password: string
+}
+
+export interface Product {
+    name: string
+    price: string
+    img: string
+    description: string
+    owner: UserProfile
 }
 
 // ACTION CREATORS
@@ -39,7 +47,7 @@ export type AppState = App
 export type UserState = User
 
 export interface RootState<S> {
-    user?: UserState
-    app?: AppState
-    router?: ReactRouter.RouteComponentProps<S>
+    user: UserState | null
+    app: AppState
+    router: ReactRouter.RouteComponentProps<S>
 }
