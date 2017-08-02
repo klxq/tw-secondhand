@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import 'isomorphic-fetch'
 
-if (process.env.NODE_ENV === 'test') {
+if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
   require('./apis/mocks')
 }
 

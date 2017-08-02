@@ -1,0 +1,54 @@
+.App-product-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.App-product-list ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.App-product-list-item {
+  width: 100%;
+  height: 120px;
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.App-product-list-item .left {
+  flex-grow: 1;
+}
+
+.App-product-list-item .left img {
+  max-width: 120px;
+  max-height: 120px;
+}
+
+.App-product-list-item .right {
+  text-align: left;
+  flex-grow: 2;
+}
+
+.App-product-list-item .right .name {
+  margin: 6px 0px 15px 0px;
+}
+
+.App-product-list-item .right .price {
+  color: #fd9800;
+  margin: 15px 0px;
+}
+
+.App-product-list-item .right .description {
+  color: rgba(0, 0, 0, 0.4);
+  margin: 15px -4px 15px 0px;
+  padding-left: 20px;
+  background-image: url('./Pencil-Yellow-user.ico');
+  background-size: 9%;
+  background-repeat: no-repeat;
+}
+
+.App-product-list-item .right .status {
+  margin: 15px 0px 6px 0px;
+}

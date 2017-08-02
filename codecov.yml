@@ -1,0 +1,6 @@
+ignore:
+  - "src/apis/mocks"
+  - "src/registerServiceWorker.ts"
+  - "src/setupTests.ts"
+  - "src/definitions.ts"
+  - "src/index.tsx"
