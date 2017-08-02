@@ -1,7 +1,9 @@
 import { combineEpics } from 'redux-observable'
 
-import { epics as userEpic } from '../modules/user/actions'
+import { epics as userEpics } from '../modules/user/actions'
+import { productEpics } from '../modules/product/actions'
 
 export const rootEpic = combineEpics(
-    ...userEpic,
+    ...userEpics,
+    ...productEpics,
 )

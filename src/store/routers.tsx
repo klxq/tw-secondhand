@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Route } from 'react-router'
 
-import { HomePage } from '../containers/pages/Home/HomePage'
+import { connectedHomePage as HomePage } from '../containers/pages/Home/HomePage'
 import { AboutUsPage } from '../containers/pages/AboutUs/AboutUsPage'
 
 export const routers = (

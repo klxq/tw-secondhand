@@ -3,54 +3,38 @@ import { Component } from 'react'
 import { connect, DispatchProp } from 'react-redux'
 import { RouteComponentProps } from 'react-router'
 
-import { RootState, UserState, Product } from '../../../definitions'
+import { RootState, Product } from '../../../definitions'
 import { Header, Footer, ProductList } from '../../../components'
-import { available } from '../../../apis/product'
+import { availableStart } from '../../../modules/product/actions'
 
 import './HomePage.css'
 
-interface HomePageProps extends DispatchProp<void>, RouteComponentProps<void> {
-    user: UserState
-}
-
-interface HomePageState {
+export interface HomePageProps extends DispatchProp<void>, RouteComponentProps<void> {
     products: Product[]
 }
 
-class HomePage extends Component<HomePageProps, HomePageState> {
+export class HomePage extends Component<HomePageProps> {
     constructor(props: HomePageProps) {
         super(props)
 
-        this.state = {
-            products: []
-        }
-
-        this.fetchAllProducts()
+        this.props.dispatch(availableStart())
     }
 
     render() {
         return (
             <div className="App">
                 <Header title="精选"/>
-                <ProductList items={this.state.products}/>
+                <ProductList items={this.props.products}/>
                 <Footer/>
             </div>
         )
     }
-
-    async fetchAllProducts(): Promise<void> {
-        this.setState({
-            products: await available()
-        })
-    }
 }
 
-function mapStateToProps(state: RootState<object>) {
-  return { }
+function mapStateToProps(state: RootState): Partial<HomePageProps> {
+  return {
+      products: state.product.available
+  }
 }
 
-const connectedHomePage = connect(mapStateToProps)(HomePage)
-
-export {
-    connectedHomePage as HomePage
-}
+export const connectedHomePage = connect(mapStateToProps)(HomePage)

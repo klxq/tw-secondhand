@@ -1,12 +1,14 @@
+import { Action } from 'redux'
 import { AppState } from '../../definitions'
-import * as Redux from 'redux'
 
 const initialState: AppState  = {
     loading: false,
     logined: false,
 }
 
-export function appReducer(state: AppState, action: Redux.Action): AppState {
-    state = state || initialState
-    return state
+export function appReducer(state: AppState = initialState, action: Action): AppState {
+    switch (action.type) {
+        default:
+            return state
+    }
 }

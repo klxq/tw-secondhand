@@ -54,8 +54,15 @@ export interface UserState {
     sessionToken: string | null
 }
 
-export interface RootState<S> {
+export interface ProductState {
+    available: Product[]
+    bought: Product[]
+    owned: Product[]
+}
+
+export interface RootState {
     user: UserState | null
     app: AppState
-    router: ReactRouter.RouteComponentProps<S>
+    product: ProductState
+    router: ReactRouter.RouteComponentProps<void>
 }

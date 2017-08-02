@@ -1,9 +1,5 @@
 import { Epic, ActionsObservable } from 'redux-observable'
 import { Observable } from 'rxjs/Observable'
-import 'rxjs/add/observable/from'
-import 'rxjs/add/operator/mergeMap'
-import 'rxjs/add/operator/map'
-
 import { User, UserAuthenticatingAction, GeneralAction, CreatedUser } from '../../definitions'
 import { login } from '../../apis/user'
 
