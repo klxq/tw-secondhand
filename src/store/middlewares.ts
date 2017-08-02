@@ -1,5 +1,5 @@
 import thunk from 'redux-thunk'
-import { createEpicMiddleware } from 'redux-most'
+import { createEpicMiddleware } from 'redux-observable'
 
 import { rootEpic } from './epics'
 

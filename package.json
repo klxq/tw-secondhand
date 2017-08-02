@@ -6,7 +6,6 @@
   "dependencies": {
     "history": "^4.6.0",
     "isomorphic-fetch": "^2.2.1",
-    "most": "^1.4.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
@@ -14,11 +13,12 @@
     "react-router-redux": "^5.0.0-alpha.6",
     "redux": "^3.7.0",
     "redux-logger": "^3.0.6",
-    "redux-most": "^0.5.2",
+    "redux-observable": "^0.14.1",
     "redux-storage": "^4.1.2",
     "redux-storage-decorator-filter": "^1.1.8",
     "redux-storage-engine-localstorage": "^1.1.4",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "rxjs": "^5.4.2"
   },
   "devDependencies": {
     "@types/enzyme": "^2.8.1",

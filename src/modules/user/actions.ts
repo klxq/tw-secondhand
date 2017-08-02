@@ -1,5 +1,8 @@
-import { fromPromise, Stream } from 'most'
-import { select, Epic } from 'redux-most'
+import { Epic, ActionsObservable } from 'redux-observable'
+import { Observable } from 'rxjs/Observable'
+import 'rxjs/add/observable/from'
+import 'rxjs/add/operator/mergeMap'
+import 'rxjs/add/operator/map'
 
 import { User, UserAuthenticatingAction, GeneralAction, CreatedUser } from '../../definitions'
 import { login } from '../../apis/user'
@@ -12,9 +15,9 @@ export function userLogin(user: User): UserAuthenticatingAction {
     return { type: USER_LOGIN, payload: user }
 }
 
-function loginEpic(action$: Stream<UserAuthenticatingAction>): Stream<GeneralAction> {
-    return action$.thru(select(USER_LOGIN))
-        .chain((action: UserAuthenticatingAction) => fromPromise(login(action.payload)))
+function loginEpic(action$: ActionsObservable<GeneralAction>): Observable<GeneralAction> {
+    return action$.ofType(USER_LOGIN)
+        .mergeMap((action: UserAuthenticatingAction) => Observable.from(login(action.payload)))
         .map((loginResponse: null | CreatedUser) => (
             loginResponse
             ? {type: USER_LOGIN_SUC, payload: loginResponse}
@@ -22,6 +25,6 @@ function loginEpic(action$: Stream<UserAuthenticatingAction>): Stream<GeneralAct
         ))
 }
 
-export const epics: Array<Epic<GeneralAction>> = [
+export const epics: Epic<GeneralAction, void>[] = [
     loginEpic,
 ]
