@@ -1,4 +1,14 @@
+declare namespace NodeJS {
+  export interface Global {
+    localStorage: Storage
+  }
+}
+
 global.localStorage = {
-  getItem: () => '{}',
-  setItem: () => '{}',
+  key: null,
+  length: 0,
+  getItem() { return null },
+  setItem() { return null },
+  removeItem() { return null },
+  clear() { return null },
 }
