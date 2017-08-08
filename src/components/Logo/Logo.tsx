@@ -5,7 +5,7 @@ import './Logo.css'
 const logo = require('./logo.png')
 
 interface LogoProps {
-   logo: string
+   logo?: string
 }
 
 export class Logo extends Component<LogoProps> {

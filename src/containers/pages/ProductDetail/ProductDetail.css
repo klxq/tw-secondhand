@@ -18,24 +18,24 @@
 }
 
 .App-product-detail .price {
-  color: #fd9800;
-  margin: 15px 0px;
+    color: #fd9800;
+    margin: 15px 0px;
 }
 
 .App-product-detail .owner {
-  display: flex;
-  margin: 15px 0px;
+    display: flex;
+    margin: 15px 0px;
 }
 
 .App-product-detail .owner p {
-  display: inline-block;
-  color: rgba(0, 0, 0, 0.4);
-  margin: 0;
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.4);
+    margin: 0;
 }
 
 .App-product-detail .owner img {
-  max-height: 18px;
-  margin: 0 10px 0 0;
+    max-height: 18px;
+    margin: 0 10px 0 0;
 }
 
 .App-product-detail .description {

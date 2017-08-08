@@ -18,6 +18,10 @@ global.URLSearchParams = class URLSearchParams {
     private key: string
     private value: string
 
+    get(key: string): string {
+        return this.value
+    }
+
     append(key: string, value: string): void {
         this.key = key
         this.value = value
