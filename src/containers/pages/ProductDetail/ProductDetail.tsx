@@ -4,8 +4,7 @@ import { connect, DispatchProp } from 'react-redux'
 import { RouteComponentProps } from 'react-router'
 
 import { RootState, Product } from '../../../definitions'
-import { Modal, Header } from '../../../components'
-import { tokenize } from '../../../utils'
+import { Modal, Header, Button } from '../../../components'
 
 import * as pencil from '../../../fixtures/Pencil-Yellow-user.ico'
 import './ProductDetail.css'
@@ -25,7 +24,7 @@ export class ProductDetail extends Component<ProductDetailProps> {
 
     render() {
         const id = this.props.match.params.id
-        const product = this.props.products.find(x => tokenize(x) === id)
+        const product = this.props.products.find(x => x.objectId === id)
 
         const body = product ? (
             <div className="App-product-detail">
@@ -45,6 +44,7 @@ export class ProductDetail extends Component<ProductDetailProps> {
                 <div className="description">
                     {product.description}
                 </div>
+                <Button content="立即购买"/>
             </div>
         ) : (
             <p>Loading</p>

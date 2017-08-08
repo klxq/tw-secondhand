@@ -16,9 +16,12 @@ it('Logo display item information', () => {
         img: 'http://test.test',
         description: 'description',
         owner: {
-        username: 'owner.username',
-        objectId: 'owner.objectId',
-        }
+            username: 'owner.username',
+            objectId: 'owner.objectId',
+        },
+        objectId: '',
+        createdAt: '',
+        updatedAt: '',
     }]
     const wrapper = shallow(<ProductList items={products}/>)
 

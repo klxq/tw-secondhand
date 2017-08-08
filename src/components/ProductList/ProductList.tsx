@@ -3,7 +3,6 @@ import { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Product } from '../../definitions'
-import { tokenize } from '../../utils'
 
 import * as pencil from '../../fixtures/Pencil-Yellow-user.ico'
 import './ProductList.css'
@@ -20,7 +19,7 @@ export class ProductList extends Component<ProductListProps> {
             {
             this.props.items.map((item, i) => (
                 <li key={i} className="App-product-list-item">
-                    <Link to={`./products/${tokenize(item)}`}>
+                    <Link to={`./products/${item.objectId}`}>
                         <div className="left">
                             <img src={item.img} />
                         </div>

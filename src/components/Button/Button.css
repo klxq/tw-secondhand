@@ -1,0 +1,12 @@
+.App-button {
+    margin: 50px 0;
+}
+
+.App-button button {
+    font-size: large;
+    width: 250px;
+    height: 40px;
+    background-color: #fbe251;
+    border-width: 0px;
+    border-radius: 5px;
+}

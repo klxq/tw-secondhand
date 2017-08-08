@@ -11,7 +11,10 @@ const products: Product[] = [{
     owner: {
         username: 'vsavkin',
         objectId: '35996',
-    }
+    },
+    objectId: '35996',
+    createdAt: '',
+    updatedAt: '',
 }, {
     name: 'Victor Berchet',
     price: '248818',
@@ -20,7 +23,10 @@ const products: Product[] = [{
     owner: {
         username: 'vicb',
         objectId: '248818',
-    }
+    },
+    objectId: '248818',
+    createdAt: '',
+    updatedAt: '',
 }, {
     name: 'Tobias Bosch',
     price: '690815',
@@ -29,7 +35,10 @@ const products: Product[] = [{
     owner: {
         username: 'tbosch',
         objectId: '690815',
-    }
+    },
+    objectId: '690815',
+    createdAt: '',
+    updatedAt: '',
 }, {
     name: 'Igor Minar',
     price: '216296',
@@ -38,7 +47,10 @@ const products: Product[] = [{
     owner: {
         username: 'IgorMinar',
         objectId: '216296',
-    }
+    },
+    objectId: '216296',
+    createdAt: '',
+    updatedAt: '',
 }, {
     name: 'Pete Bacon Darwin',
     price: '15655',
@@ -47,7 +59,10 @@ const products: Product[] = [{
     owner: {
         username: 'petebacondarwin',
         objectId: '15655',
-    }
+    },
+    objectId: '15655',
+    createdAt: '',
+    updatedAt: '',
 }, {
     name: 'Miško Hevery',
     price: '111951',
@@ -56,7 +71,10 @@ const products: Product[] = [{
     owner: {
         username: 'mhevery',
         objectId: '111951',
-    }
+    },
+    objectId: '111951',
+    createdAt: '',
+    updatedAt: '',
 }, {
     name: 'Alex Eagle',
     price: '47395',
@@ -65,7 +83,10 @@ const products: Product[] = [{
     owner: {
         username: 'alexeagle',
         objectId: '47395',
-    }
+    },
+    objectId: '47395',
+    createdAt: '',
+    updatedAt: '',
 }, {
     name: 'George Kalpakas',
     price: '8604205',
@@ -74,7 +95,10 @@ const products: Product[] = [{
     owner: {
         username: 'gkalpak',
         objectId: '8604205',
-    }
+    },
+    objectId: '8604205',
+    createdAt: '',
+    updatedAt: '',
 }, {
     name: 'Chuck Jazdzewski',
     price: '372013',
@@ -83,7 +107,10 @@ const products: Product[] = [{
     owner: {
         username: 'chuckjaz',
         objectId: '372013',
-    }
+    },
+    objectId: '372013',
+    createdAt: '',
+    updatedAt: '',
 }, {
     name: 'Timothy Blasi',
     price: '613610',
@@ -92,7 +119,10 @@ const products: Product[] = [{
     owner: {
         username: 'kegluneq',
         objectId: '613610',
-    }
+    },
+    objectId: '613610',
+    createdAt: '',
+    updatedAt: '',
 }]
 
 fetchMock.get(`${host}/products`, JSON.stringify(products))

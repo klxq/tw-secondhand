@@ -30,6 +30,9 @@ export interface Product {
     img: string
     description: string
     owner: CreatedUser
+    objectId: string
+    createdAt: string
+    updatedAt: string
 }
 
 // ACTION CREATORS

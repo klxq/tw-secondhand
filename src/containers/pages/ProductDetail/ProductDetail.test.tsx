@@ -25,7 +25,10 @@ beforeEach(() => {
         owner: {
             objectId: 'id',
             username: '',
-        }
+        },
+        objectId: 'aWQlMkZ0ZXN0',
+        createdAt: '',
+        updatedAt: '',
     }]
 })
 
