@@ -1,0 +1,44 @@
+.App-product-detail {
+    text-align: center;
+}
+
+.App-product-detail img {
+    max-width: 200px;
+}
+
+.App-product-detail .brief {
+    margin: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.App-product-detail .brief .left {
+    margin-right: 50px;
+}
+
+.App-product-detail .price {
+  color: #fd9800;
+  margin: 15px 0px;
+}
+
+.App-product-detail .owner {
+  display: flex;
+  margin: 15px 0px;
+}
+
+.App-product-detail .owner p {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.4);
+  margin: 0;
+}
+
+.App-product-detail .owner img {
+  max-height: 18px;
+  margin: 0 10px 0 0;
+}
+
+.App-product-detail .description {
+    margin: 20px 50px;
+    text-align: left;
+}

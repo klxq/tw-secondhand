@@ -1,4 +1,14 @@
 .App-header {
+  width: 100%;
+}
+
+.App-header .container {
   display: flex;
   justify-content: center;
+}
+
+.App-header .back {
+  position: absolute;
+  left: 30px;
+  top: 30px;
 }

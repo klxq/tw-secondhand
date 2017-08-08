@@ -1,8 +1,11 @@
 import * as React from 'react'
 import { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import { Product } from '../../definitions'
+import { tokenize } from '../../utils'
 
+import * as pencil from '../../fixtures/Pencil-Yellow-user.ico'
 import './ProductList.css'
 
 export interface ProductListProps {
@@ -17,17 +20,22 @@ export class ProductList extends Component<ProductListProps> {
             {
             this.props.items.map((item, i) => (
                 <li key={i} className="App-product-list-item">
-                <div className="left">
-                    <img src={item.img} />
-                </div>
-                <div className="right">
-                    <h4 className="name">{item.name}</h4>
-                    <p className="price">¥ {item.price}</p>
-                    <p className="description">{item.owner.username}</p>
-                    <p className="status"/>
-                </div>
+                    <Link to={`./products/${tokenize(item)}`}>
+                        <div className="left">
+                            <img src={item.img} />
+                        </div>
+                        <div className="right">
+                            <h4 className="name">{item.name}</h4>
+                            <p className="price">¥ {item.price}</p>
+                            <div className="owner">
+                                <img src={pencil}/>
+                                <p>{item.owner.username}</p>
+                            </div>
+                            <p className="status"/>
+                        </div>
+                    </Link>
                 </li>
-            ))
+                ))
             }
             </ul>
         </div>

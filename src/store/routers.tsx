@@ -1,12 +1,17 @@
 import * as React from 'react'
-import { Route } from 'react-router'
+import { Route, Redirect } from 'react-router'
 
 import { connectedHomePage as HomePage } from '../containers/pages/Home/HomePage'
-import { AboutUsPage } from '../containers/pages/AboutUs/AboutUsPage'
+import { connectedProductDetail as ProductDetail } from '../containers/pages/ProductDetail/ProductDetail'
 
 export const routers = (
     <div>
-        <Route exact={true} path="/" component={HomePage}/>
-        <Route path="/about-us" component={AboutUsPage}/>
+        <main>
+            <Route path="/home/" component={HomePage}/>
+            <Route path="/" exact={true} render={() => (<Redirect to="/home/" />)}/>
+        </main>
+        <aside>
+            <Route path="/:page/products/:id/" component={ProductDetail}/>
+        </aside>
     </div>
 )

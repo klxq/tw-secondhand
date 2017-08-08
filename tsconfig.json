@@ -20,7 +20,11 @@
     "suppressImplicitAnyIndexErrors": true,
     "experimentalDecorators": true,
     "noUnusedLocals": true,
-    "typeRoots": ["types", "node_modules/@types"]
+    "typeRoots": ["types", "node_modules/@types"],
+    "baseUrl": ".",
+    "paths": {
+      "react-modal": ["types/react-modal"]
+    }
   },
   "include": [
     "src/**/*",
