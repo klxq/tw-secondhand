@@ -106,7 +106,15 @@ export function purchaseEpic(
         .catch(() => Observable.of(purchaseFail()))
 }
 
+export function reloadAvailableEpic(
+    action$: ActionsObservable<PurchaseSuccessAction>,
+): Observable<AvailableStartAction> {
+    return action$.ofType(ProductActionType.PURCHASE_SUCCESS)
+        .map(availableStart)
+}
+
 export const productEpics: Epic<Action, RootState>[] = [
     availableEpic,
     purchaseEpic,
+    reloadAvailableEpic,
 ]
