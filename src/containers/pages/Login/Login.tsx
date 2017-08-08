@@ -1,15 +1,18 @@
 import * as React from 'react'
 import { Component } from 'react'
+import { connect, DispatchProp } from 'react-redux'
 
+import { RootState } from '../../../definitions'
 import { Modal, Header, Logo, Button } from '../../../components'
-import { login } from '../../../apis/user'
+import { userLogin } from '../../../modules/user/actions'
+
 import './Login.css'
 
-interface LoginProps {
+export interface LoginProps extends DispatchProp<void> {
 
 }
 
-interface LoginState {
+export interface LoginState {
     username: string
     password: string
 }
@@ -36,13 +39,11 @@ export class Login extends Component<LoginProps, LoginState> {
         })
     }
 
-    async login(): Promise<void> {
-        await login({
+    login(): void {
+        this.props.dispatch(userLogin({
             username: this.state.username,
             password: this.state.password,
-        })
-
-        history.back()
+        }))
     }
 
     render() {
@@ -68,3 +69,9 @@ export class Login extends Component<LoginProps, LoginState> {
         )
     }
 }
+
+function mapStateToProps(state: RootState): Partial<LoginProps> {
+  return { }
+}
+
+export const connectedLogin = connect(mapStateToProps)(Login)

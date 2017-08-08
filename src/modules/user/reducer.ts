@@ -14,6 +14,6 @@ export function userReducer(state: UserState, action: UserAuthenticatedAction): 
                 ...action.payload,
             }
         default:
+            return state
     }
-    return state
 }
