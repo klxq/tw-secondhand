@@ -11,5 +11,5 @@ it('Footer shallow renders', () => {
 it('Footer shallow active stats', () => {
     const wrapper = shallow(<Footer/>)
 
-    expect(wrapper.find('.active').length).toBe(1)
+    expect(wrapper.find('.App-footer').length).toBe(1)
 })

@@ -1,5 +1,7 @@
 import * as React from 'react'
 import { Component } from 'react'
+import { NavLink, Link } from 'react-router-dom'
+
 import './Footer.css'
 
 const homeIcon = require('./home.png')
@@ -11,20 +13,26 @@ export class Footer extends Component {
         return (
             <div className="App-footer">
                 <ul className="">
-                    <li className="active">
-                        <span className="footer-img">
-                            <img src={homeIcon} alt="home"/>
-                        </span>
+                    <li>
+                        <NavLink to="/home/" activeClassName="active">
+                            <span className="footer-img">
+                                <img src={homeIcon} alt="home"/>
+                            </span>
+                        </NavLink>
                     </li>
                     <li>
-                        <span className="footer-img">
-                            <img src={plusIcon} alt="add"/>
-                        </span>
+                        <Link to="./upload/">
+                            <span className="footer-img">
+                                <img src={plusIcon} alt="add"/>
+                            </span>
+                        </Link>
                     </li>
                     <li>
-                        <span className="footer-img">
-                            <img src={personIcon} alt="profile"/>
-                        </span>
+                        <NavLink to="/profile/" activeClassName="active">
+                            <span className="footer-img">
+                                <img src={personIcon} alt="profile"/>
+                            </span>
+                        </NavLink>
                     </li>
                 </ul>
             </div>

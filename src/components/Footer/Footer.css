@@ -21,7 +21,11 @@
     text-align: center;
 }
 
-.App-footer > ul > li.active {
+.App-footer > ul > li a {
+    display: block;
+}
+
+.App-footer > ul > li a.active {
     background-color: #fff;
 }
 
