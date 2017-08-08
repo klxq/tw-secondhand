@@ -14,6 +14,9 @@ export function productReducer(state: ProductState = initialState, action: Produ
                 ...state,
                 available: action.payload
             }
+        case ProductActionType.PURCHASE_SUCCESS:
+            location.pathname = '/home/'
+            return state
         default:
             return state
     }
