@@ -1,6 +1,6 @@
 import { Epic, ActionsObservable } from 'redux-observable'
 import { Observable } from 'rxjs/Observable'
-import { User, UserAuthenticatingAction, GeneralAction, CreatedUser } from '../../definitions'
+import { User, UserAuthenticatingAction, GeneralAction, UserWithToken } from '../../definitions'
 import { login } from '../../apis/user'
 
 export const USER_LOGIN = 'USER_LOGIN'
@@ -14,7 +14,7 @@ export function userLogin(user: User): UserAuthenticatingAction {
 function loginEpic(action$: ActionsObservable<GeneralAction>): Observable<GeneralAction> {
     return action$.ofType(USER_LOGIN)
         .mergeMap((action: UserAuthenticatingAction) => Observable.from(login(action.payload)))
-        .map((loginResponse: null | CreatedUser) => (
+        .map((loginResponse: null | UserWithToken) => (
             loginResponse
             ? {type: USER_LOGIN_SUC, payload: loginResponse}
             : {type: USER_LOGIN_FAIL}

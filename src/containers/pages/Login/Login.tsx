@@ -1,14 +1,18 @@
 import * as React from 'react'
 import { Component } from 'react'
+import { connect, DispatchProp } from 'react-redux'
 
+import { RootState } from '../../../definitions'
 import { Modal, Header, Logo, Button } from '../../../components'
+import { userLogin } from '../../../modules/user/actions'
+
 import './Login.css'
 
-interface LoginProps {
+export interface LoginProps extends DispatchProp<void> {
 
 }
 
-interface LoginState {
+export interface LoginState {
     username: string
     password: string
 }
@@ -35,6 +39,13 @@ export class Login extends Component<LoginProps, LoginState> {
         })
     }
 
+    login(): void {
+        this.props.dispatch(userLogin({
+            username: this.state.username,
+            password: this.state.password,
+        }))
+    }
+
     render() {
         return (
             <Modal>
@@ -50,7 +61,7 @@ export class Login extends Component<LoginProps, LoginState> {
                         <div>
                             <input placeholder="密码" onInput={(e) => this.updatePassword(e)}/>
                         </div>
-                        <Button content="登录"/>
+                        <Button content="登录" onClick={() => this.login()}/>
                         <Button content="免费注册"/>
                     </form>
                 </div>
@@ -58,3 +69,9 @@ export class Login extends Component<LoginProps, LoginState> {
         )
     }
 }
+
+function mapStateToProps(state: RootState): Partial<LoginProps> {
+  return { }
+}
+
+export const connectedLogin = connect(mapStateToProps)(Login)

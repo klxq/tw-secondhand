@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { Component } from 'react'
 import { connect, DispatchProp } from 'react-redux'
-import { RouteComponentProps } from 'react-router'
+import { RouteComponentProps, Route } from 'react-router'
 
 import { RootState, UserState } from '../../../definitions'
-import { Login } from '../../pages'
+import { connectedLogin as Login } from '../../pages'
 
 export interface ActionWrapperProps extends DispatchProp<void>, RouteComponentProps<void> {
     user: UserState | null
@@ -18,7 +18,7 @@ export class ActionWrapper extends Component<ActionWrapperProps> {
 
         switch (params.get('action')) {
             case 'login':
-                return (<Login/>)
+                return (<Route component={Login}/>)
             default:
                 return null
         }
