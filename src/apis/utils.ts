@@ -1,5 +1,14 @@
 export const host = 'https://secondhand.leanapp.cn'
 
+export interface HttpNoBodyOption {
+    query?: object
+    headers?: object
+}
+
+export interface HttpBodyOption extends HttpNoBodyOption {
+    body?: object | string
+}
+
 export function normalizeUrl(url: string): string {
     if (url.startsWith('http') || url.startsWith('//')) {
         return url
@@ -23,37 +32,37 @@ export async function request<T>(url: string, option?: RequestInit): Promise<T> 
     return body
 }
 
-export async function get<T>(url: string, query?: object): Promise<T> {
+export async function get<T>(url: string, option?: HttpNoBodyOption): Promise<T> {
     let normalizedUrl = url
-    if (query) {
-        const queryString = serializeQuery(query)
+    if (option && option.query) {
+        const queryString = serializeQuery(option.query)
         normalizedUrl = `${url}?${queryString}`
     }
-    return request<T>(normalizedUrl, { method: 'GET' })
+    return request<T>(normalizedUrl, { method: 'GET', headers: option && option.headers })
 }
 
-export async function post<T>(url: string, body: object | string, query?: object): Promise<T> {
+export async function post<T>(url: string, option?: HttpBodyOption): Promise<T> {
     let normalizedUrl = url
-    let normalizedBody = body
-    if (query) {
-        const queryString = serializeQuery(query)
+    let normalizedBody = option && option.body
+    if (option && option.query) {
+        const queryString = serializeQuery(option.query)
         normalizedUrl = `${url}?${queryString}`
     }
-    if (typeof body === 'object') {
-        normalizedBody = JSON.stringify(body)
+    if (typeof normalizedBody === 'object') {
+        normalizedBody = JSON.stringify(normalizedBody)
     }
-    return request<T>(normalizedUrl, { method: 'POST', body: normalizedBody })
+    return request<T>(normalizedUrl, { method: 'POST', body: normalizedBody, headers: option && option.headers })
 }
 
-export async function put<T>(url: string, body: object | string, query?: object): Promise<T> {
+export async function put<T>(url: string, option?: HttpBodyOption): Promise<T> {
     let normalizedUrl = url
-    let normalizedBody = body
-    if (query) {
-        const queryString = serializeQuery(query)
+    let normalizedBody = option && option.body
+    if (option && option.query) {
+        const queryString = serializeQuery(option.query)
         normalizedUrl = `${url}?${queryString}`
     }
-    if (typeof body === 'object') {
-        normalizedBody = JSON.stringify(body)
+    if (typeof normalizedBody === 'object') {
+        normalizedBody = JSON.stringify(normalizedBody)
     }
-    return request<T>(normalizedUrl, { method: 'PUT', body: normalizedBody })
+    return request<T>(normalizedUrl, { method: 'PUT', body: normalizedBody, headers: option && option.headers })
 }

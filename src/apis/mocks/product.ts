@@ -126,3 +126,5 @@ const products: Product[] = [{
 }]
 
 fetchMock.get(`${host}/products`, JSON.stringify(products))
+
+fetchMock.put(`express:${host}/products/buy/:id`, '{}')

@@ -64,7 +64,7 @@ export interface ProductState {
 }
 
 export interface RootState {
-    user: UserState | null
+    user: UserState
     app: AppState
     product: ProductState
     router: ReactRouter.RouteComponentProps<void>

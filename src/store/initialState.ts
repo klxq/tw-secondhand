@@ -5,7 +5,10 @@ export const initialState: RootState = {
         loading: true,
         logined: false,
     },
-    user: null,
+    user: {
+        username: null,
+        sessionToken: null,
+    },
     product: {
         available: [],
         bought: [],

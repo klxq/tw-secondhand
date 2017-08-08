@@ -3,8 +3,9 @@ import { Component } from 'react'
 import { connect, DispatchProp } from 'react-redux'
 import { RouteComponentProps } from 'react-router'
 
-import { RootState, Product } from '../../../definitions'
+import { RootState, Product, UserState } from '../../../definitions'
 import { Modal, Header, Button } from '../../../components'
+import { purchaseStart } from '../../../modules/product/actions'
 
 import * as pencil from '../../../fixtures/Pencil-Yellow-user.ico'
 import './ProductDetail.css'
@@ -15,11 +16,21 @@ export interface RouterParams {
 
 export interface ProductDetailProps extends DispatchProp<void>, RouteComponentProps<RouterParams> {
     products: Product[]
+    user: UserState
 }
 
 export class ProductDetail extends Component<ProductDetailProps> {
     constructor(props: ProductDetailProps) {
         super(props)
+    }
+
+    purchase(): void {
+        if (!this.props.user.sessionToken) {
+            location.search = '?action=login'
+            return
+        }
+
+        this.props.dispatch(purchaseStart(this.props.match.params.id))
     }
 
     render() {
@@ -44,7 +55,7 @@ export class ProductDetail extends Component<ProductDetailProps> {
                 <div className="description">
                     {product.description}
                 </div>
-                <Button content="立即购买"/>
+                <Button content="立即购买" onClick={() => this.purchase()}/>
             </div>
         ) : (
             <p>Loading</p>
@@ -61,7 +72,8 @@ export class ProductDetail extends Component<ProductDetailProps> {
 
 function mapStateToProps(state: RootState): Partial<ProductDetailProps> {
   return {
-      products: state.product.available
+      products: state.product.available,
+      user: state.user,
   }
 }
 
