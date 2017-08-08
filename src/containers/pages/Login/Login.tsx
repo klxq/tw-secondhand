@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Component } from 'react'
 
 import { Modal, Header, Logo, Button } from '../../../components'
+import { login } from '../../../apis/user'
 import './Login.css'
 
 interface LoginProps {
@@ -35,6 +36,15 @@ export class Login extends Component<LoginProps, LoginState> {
         })
     }
 
+    async login(): Promise<void> {
+        await login({
+            username: this.state.username,
+            password: this.state.password,
+        })
+
+        history.back()
+    }
+
     render() {
         return (
             <Modal>
@@ -50,7 +60,7 @@ export class Login extends Component<LoginProps, LoginState> {
                         <div>
                             <input placeholder="密码" onInput={(e) => this.updatePassword(e)}/>
                         </div>
-                        <Button content="登录"/>
+                        <Button content="登录" onClick={() => this.login()}/>
                         <Button content="免费注册"/>
                     </form>
                 </div>
