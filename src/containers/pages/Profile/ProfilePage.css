@@ -1,0 +1,15 @@
+.App-profile {
+    text-align: center;
+}
+
+.App-profile .logo-container {
+    width: 200px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid grey;
+    box-shadow: 5px 5px 5px #888888;
+}
+
+.App-profile .logo-container .App-logo {
+    margin-right: 20px;
+}

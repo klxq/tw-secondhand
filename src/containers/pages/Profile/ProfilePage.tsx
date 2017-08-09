@@ -3,7 +3,9 @@ import { Component } from 'react'
 import { connect, DispatchProp } from 'react-redux'
 
 import { RootState, UserState } from '../../../definitions'
-import { Header, Footer, Logo } from '../../../components'
+import { Header, Footer, Logo, Button } from '../../../components'
+
+import './ProfilePage.css'
 
 export interface ProfilePageProps extends DispatchProp<void> {
     user: UserState
@@ -22,6 +24,9 @@ export class ProfilePage extends Component<ProfilePageProps> {
                     <Logo/>
                     <span>{this.props.user.username || '未登录'}</span>
                 </div>
+                <Button content="已买宝贝"/>
+                <Button content="出售宝贝"/>
+                <Button content="退出登录"/>
                 <Footer/>
             </div>
         )
