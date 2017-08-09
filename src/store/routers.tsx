@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Route, Redirect } from 'react-router'
 
 import { connectedHomePage as HomePage } from '../containers/pages/Home/HomePage'
-import { ProfilePage } from '../containers/pages/Profile/ProfilePage'
+import { connectedProfilePage as ProfilePage } from '../containers/pages/Profile/ProfilePage'
 import { connectedProductDetail as ProductDetail } from '../containers/pages/ProductDetail/ProductDetail'
 import { ActionWrapper } from '../containers/wrappers/Action/ActionWrapper'
 
