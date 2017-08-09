@@ -22,6 +22,10 @@ global.URLSearchParams = class URLSearchParams {
         return this.value
     }
 
+    has(key: string): boolean {
+        return !!this.key
+    }
+
     append(key: string, value: string): void {
         this.key = key
         this.value = value
